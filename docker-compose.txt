@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  rag-application:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rag-app
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - ./data:/app/data
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - PYTHONUNBUFFERED=1
+      - CHROMA_DB_HOST=chroma-db
+      - CHROMA_DB_PORT=8081
+    depends_on:
+      - chroma-db
+    networks:
+      - rag-network
+
+  chroma-db:
+    image: ghcr.io/chroma-core/chroma:latest
+    container_name: chroma-db
+    volumes:
+      - chroma-data:/chroma/chroma
+    ports:
+      - "8081:8081"
+    environment:
+      - CHROMA_DB_IMPL=duckdb+parquet
+      - CHROMA_PERSIST_DIRECTORY=/chroma/chroma
+    networks:
+      - rag-network
+
+  jupyter:
+    image: jupyter/scipy-notebook:latest
+    container_name: jupyter-notebook
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/home/jovyan/work
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    networks:
+      - rag-network
+
+volumes:
+  chroma-data:
+    driver: local
+
+networks:
+  rag-network:
+    driver: bridge
