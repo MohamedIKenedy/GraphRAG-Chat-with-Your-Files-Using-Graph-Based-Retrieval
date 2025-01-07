@@ -1,5 +1,7 @@
 # Graph RAG Application
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MohamedIKenedy/Computer-vision-based-Emotion-tracker/blob/main/GraphRAGs.ipynb)
+
 A sophisticated Retrieval-Augmented Generation (RAG) system that combines Knowledge Graphs, Document Processing, and Google's Gemini LLM for intelligent document analysis and querying.
 
 ## 🌟 Features
