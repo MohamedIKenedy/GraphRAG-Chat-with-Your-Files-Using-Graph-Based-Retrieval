@@ -47,6 +47,8 @@ scikit-learn
 
 Before using the application, set up your Google Gemini API key:
 
+Adding a .env file is the best practice when deploying the solution
+
 ```python
 import os
 os.environ['GOOGLE_API_KEY'] = 'your-api-key-here'
