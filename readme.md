@@ -1,6 +1,6 @@
 # GraphRAG: A Graph-Based Retrieval Application for File Interaction
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MohamedIKenedy/GraphRAG-Chat-with-Your-Files-Using-Graph-Based-Retrieval/blob/main/GraphRAGs.ipynb)
-![Graph RAG - LLM Stack](https://medium.com/%40nebulagraph/graph-rag-the-new-llm-stack-with-knowledge-graphs-e1e902c504ed)
+![Graph RAG - LLM Stack](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*VJZUwvryabhJKbAQl27P2g.jpeg)
 
 A sophisticated Retrieval-Augmented Generation (RAG) system that combines Knowledge Graphs, Document Processing, and Google's Gemini LLM for intelligent document analysis and querying.
 
